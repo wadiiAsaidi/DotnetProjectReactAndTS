@@ -23,11 +23,22 @@ namespace DotnetProjectReactAndTS.Controllers.MembershipManagement
         [HttpGet("users")]
         public IActionResult GetUsers()
         {
-            var channel = GrpcChannel.ForAddress("http://192.168.52.138:8080/");
+            List<User> _users = new List<User>();
+            var channel = GrpcChannel.ForAddress("http://192.168.52.138:5000");
             var client = new Greeter.GreeterClient(channel);
             var reply = client.SayHello(new HelloRequest { Name = "GreeterClient" });
+            foreach (var user in reply.Users)
+            {
+                _users.Add(
+                        new User
+                        {
+                            Id = int.Parse(user.Id),
+                            Name = user.Name,
+                            Email = user.Email
+                        });
+            }
 
-            return Ok(Users);
+            return Ok(_users);
         }
 
         [HttpPost("deleteUser")]

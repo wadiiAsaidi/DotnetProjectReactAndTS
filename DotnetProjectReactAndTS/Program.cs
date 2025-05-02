@@ -13,6 +13,12 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+var url = builder.Configuration.GetSection("HostingUrls:Url").Value;
+if (!string.IsNullOrEmpty(url))
+{
+    builder.WebHost.UseUrls(url);
+}
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 

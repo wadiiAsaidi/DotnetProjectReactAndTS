@@ -7,7 +7,7 @@ package greet;
 // The greeting service definition.
 service Greeter {
   // Sends a greeting
-  rpc SayHello (HelloRequest) returns (HelloReply);
+  rpc SayHello (HelloRequest) returns (usersReply);
 }
 
 // The request message containing the user's name.
@@ -16,6 +16,11 @@ message HelloRequest {
 }
 
 // The response message containing the greetings.
-message HelloReply {
-  string message = 1;
+message user {
+   string Id = 1;
+   string Name = 2; 
+   string Email=3;
 }
+message  usersReply{
+	repeated user  users=1;
+} 
