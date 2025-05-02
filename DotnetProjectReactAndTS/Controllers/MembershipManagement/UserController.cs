@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Grpc.Net.Client;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Service.GrpcService;
+using static Service.GrpcService.Greeter;
 
 namespace DotnetProjectReactAndTS.Controllers.MembershipManagement
 {
 
-   
+
     [ApiController]
     [Route("api/[controller]")]
     public class UserController : ControllerBase
@@ -20,15 +23,19 @@ namespace DotnetProjectReactAndTS.Controllers.MembershipManagement
         [HttpGet("users")]
         public IActionResult GetUsers()
         {
+            var channel = GrpcChannel.ForAddress("http://192.168.52.138:8080/");
+            var client = new Greeter.GreeterClient(channel);
+            var reply = client.SayHello(new HelloRequest { Name = "GreeterClient" });
+
             return Ok(Users);
         }
-        
+
         [HttpPost("deleteUser")]
         public IActionResult GetDeleteUser(int id)
         {
             return Ok(Users);
-        } 
-        
+        }
+
         [HttpPost("saveUser")]
         public IActionResult AddorUpdateUser(User user)
         {
@@ -46,12 +53,12 @@ namespace DotnetProjectReactAndTS.Controllers.MembershipManagement
     public class ControllerBase : Controller
     {
         public override void OnActionExecuting(ActionExecutingContext context)
-        
+
         {
 
         }
 
-        public override void  OnActionExecuted(ActionExecutedContext context)
+        public override void OnActionExecuted(ActionExecutedContext context)
         {
 
         }
