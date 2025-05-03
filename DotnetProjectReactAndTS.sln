@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetProjectReactAndTS", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.GrpcService", "Service.GrpcService\Service.GrpcService.csproj", "{97D65A9C-BA71-4444-A64F-FF5A966DA309}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{B1815826-617F-4730-A57D-B2A30EC7F039}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{97D65A9C-BA71-4444-A64F-FF5A966DA309}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97D65A9C-BA71-4444-A64F-FF5A966DA309}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97D65A9C-BA71-4444-A64F-FF5A966DA309}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1815826-617F-4730-A57D-B2A30EC7F039}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1815826-617F-4730-A57D-B2A30EC7F039}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1815826-617F-4730-A57D-B2A30EC7F039}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1815826-617F-4730-A57D-B2A30EC7F039}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

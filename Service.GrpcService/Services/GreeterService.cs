@@ -1,5 +1,6 @@
 using Grpc.Core;
 using Service.GrpcService;
+using DataAccess.Entities;
 
 namespace Service.GrpcService.Services;
 
@@ -36,9 +37,4 @@ public class GreeterService : Greeter.GreeterBase
     }
 }
 
-public class User
-{
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public string Email { get; set; }
-}
+
