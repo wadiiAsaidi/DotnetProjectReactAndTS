@@ -9,12 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ClientApp\NewFolder\**" />
+    <Content Remove="ClientApp\NewFolder\**" />
+    <EmbeddedResource Remove="ClientApp\NewFolder\**" />
+    <None Remove="ClientApp\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="ClientApp\src\MembershipManagement\components\UserForm.tsx" />
     <None Remove="Protos\greet.proto" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\NewFolder\" />
     <Folder Include="wwwroot\dist\" />
   </ItemGroup>
 
